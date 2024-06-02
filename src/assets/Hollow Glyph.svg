@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1010 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-14963.8)">
+        <g id="Hollow-Glyph" serif:id="Hollow Glyph" transform="matrix(0.986328,0,0,0.0552251,0,14963.8)">
+            <rect x="0" y="0" width="1024" height="1024" style="fill:none;"/>
+            <g transform="matrix(0.896076,0,0,14.7059,-933.091,-164098)">
+                <path d="M2179.82,11164.2L2123.25,11225.8C2122.88,11226.2 2122.37,11226.4 2121.84,11226.4L1046.96,11226.4C1046.16,11226.4 1045.43,11225.9 1045.12,11225.1C1044.81,11224.2 1044.98,11223.3 1045.55,11222.7L1102.12,11161.1C1102.5,11160.7 1103.01,11160.5 1103.54,11160.5L2178.41,11160.5C2179.22,11160.5 2179.95,11161 2180.26,11161.8C2180.57,11162.6 2180.4,11163.6 2179.82,11164.2ZM2173.58,11164.8L1104.37,11164.8L1051.8,11222.1L2121.01,11222.1L2173.58,11164.8Z" style="fill:white;"/>
+            </g>
+        </g>
+    </g>
+</svg>
