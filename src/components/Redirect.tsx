@@ -5,7 +5,7 @@ const Redirect = ({ url }: { url: string }) => {
         window.location.href = url;
     }, [url]);
     
-    return <h1>Redirecting...</h1>
+    return <div className="landing min-h-screen flex flex-row justify-center items-center"><h1>Redirecting...</h1></div>
 }
 
 export default Redirect

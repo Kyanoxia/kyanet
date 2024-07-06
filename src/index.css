@@ -1,3 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/cascadia-code');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    color: white;
+    font-family: 'Cascadia Code', sans-serif;
+}
+
+html {
+    background-color: #1b1b1b;
+}
