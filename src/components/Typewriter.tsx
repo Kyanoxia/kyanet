@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useScramble } from "use-scramble"
 
 function Typewriter({ input, className }: { input: string, className : string }) {
