@@ -12,3 +12,7 @@
 html {
     background-color: #1b1b1b;
 }
+
+body:hover > #trailer {
+    opacity: 1;
+}

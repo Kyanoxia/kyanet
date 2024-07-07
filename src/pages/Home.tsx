@@ -1,10 +1,12 @@
 import logo from '../assets/Kyanoxia.svg'
 
 import Typewriter from "../components/Typewriter"
+import Cursor from '../components/Cursor'
 
 function Home() {
   return (
     <>
+      <Cursor/>
       <div className="flex flex-col justify-center items-center w-screen mb-10">
         <div className="landing min-h-screen flex flex-col justify-center items-center gap-5">
           <img src={logo} className="min-w-20 max-w-32"></img>
