@@ -1,8 +1,8 @@
 @import url('https://fonts.cdnfonts.com/css/cascadia-code');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 * {
     color: white;
@@ -11,8 +11,15 @@
 
 html {
     background-color: #1b1b1b;
+    cursor: none;
 }
 
-body:hover > #trailer {
+#trailer {
+    background-color: white;
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+}
+
+html:hover  #trailer {
     opacity: 1;
 }
