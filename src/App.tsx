@@ -13,7 +13,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/join" element={<VainDiscord inv="DVvGFXqpqH" col="#2b2b2b" />} />
           <Route path="/jointheaether" element={<VainDiscord inv="SPXeXhRHs5" col="#fcbacb" />} />
-          <Route path="/invitetesting" element={<VainDiscord inv="DVvGFXqpqH" col="#fcbacb" />} />
           /* Everything must precede NoPage Element! */
           <Route path="*" element={<NoPage />} />
         </Routes>
