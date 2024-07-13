@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { Helmet, HelmetProvider } from "react-helmet-async"
 
-function Get(yourUrl: string){
-    var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET",yourUrl,false);
+function Get(url: string){
+    var Httpreq = new XMLHttpRequest();
+    Httpreq.open("GET",url,false);
     Httpreq.send(null);
     return Httpreq.responseText;          
 }
@@ -14,12 +14,10 @@ const VainDiscord = ({ inv, col }: { inv: string, col: string }) => {
     }, [inv]);
 
     const request = `https://discordapp.com/api/v9/invites/${inv}`
-
     var response = JSON.parse(Get(request));
 
     var serverName = response.guild.name;
     var serverDesc = response.guild.description;
-
     var serverID = response.guild.id;
     var cdnIcon = response.guild.icon
     var serverIcon = `https://cdn.discordapp.com/icons/${serverID}/${cdnIcon}.png`
