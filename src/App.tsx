@@ -12,6 +12,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/join" element={<Redirect url="https://discord.com/invite/DVvGFXqpqH" />} />
+          <Route path="/jointheaether" element={<Redirect url="https://discord.com/invite/SPXeXhRHs5" />} />
           /* Everything must precede NoPage Element! */
           <Route path="*" element={<NoPage />} />
         </Routes>
