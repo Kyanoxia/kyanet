@@ -1,3 +1,5 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async'
+
 import logo from '../assets/Kyanoxia.svg'
 
 import Typewriter from "../components/Typewriter"
@@ -5,9 +7,15 @@ import Cursor from '../components/Cursor'
 
 function Home() {
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <meta name="Redirect Page..." content="If you're seeing this, Helmet works well but the redirection element is broken!  Contact Kyanoxia to fix it!" />
+        <meta property="og:title" content="This is the OpenGraph Title" />
+        <meta property="og:description" content="This is the OpenGraph Description" />
+        <meta property="og:image" content={logo} />
+      </Helmet>
       <Cursor/>
-      <div className="flex flex-col justify-center items-center w-screen mb-10">
+      <div className="flex flex-col justify-center items-center w-screen mb-10 overflow-hidden">
         <div className="landing min-h-screen flex flex-col justify-center items-center gap-5">
           <img src={logo} className="min-w-20 max-w-32"></img>
           <div className="header text-center">
@@ -25,7 +33,7 @@ function Home() {
           <p className="text-gray-200">Now there's a name I remember.<br/>They are rather difficult to describe. If you can think of everyone all at once, tied up neatly into a single package plagued with a creative drive, you can picture Kyanoxia.</p>
         </div>
       </div>
-    </>
+    </HelmetProvider>
   )
 }
 
