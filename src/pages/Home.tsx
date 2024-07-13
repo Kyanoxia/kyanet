@@ -9,10 +9,9 @@ function Home() {
   return (
     <HelmetProvider>
       <Helmet>
-        <meta name="Redirect Page..." content="If you're seeing this, Helmet works well but the redirection element is broken!  Contact Kyanoxia to fix it!" />
-        <meta property="og:title" content="This is the OpenGraph Title" />
-        <meta property="og:description" content="This is the OpenGraph Description" />
-        <meta property="og:image" content={logo} />
+        <meta property="og:site_name" content="The Kyanet" />
+        <meta property="og:title" content="Home" />
+        <meta property="og:description" content="The Kyanet's Entry Point. Click and you shall know." />
       </Helmet>
       <Cursor/>
       <div className="flex flex-col justify-center items-center w-screen mb-10 overflow-hidden">
