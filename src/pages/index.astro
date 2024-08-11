@@ -1,0 +1,32 @@
+---
+export const prerender = false;
+
+const pageTitle = "The Kyanet"
+
+const identity = {
+	name: "Kyanoxia",
+	country: "United States",
+	nickname: "Kya",
+	pronouns: "she/her",
+	race: "Human Fox Hybrid",
+	discord: "DVvGFXqpqH",
+	occupation: "Graphic Designer",
+
+}
+
+import "../styles/global.css"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<h1>{pageTitle}</h1>
+		<p>About Me: {identity.name}</p>
+	</body>
+</html>

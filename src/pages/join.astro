@@ -1,0 +1,27 @@
+---
+const req = Astro.locals;
+
+//const response = await fetch(`https://discord.com/api/invite/${req.user.name}`);
+//const data = await response.json();
+
+//console.log(data)
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:site_name" content="VainDiscord by Kyanoxia" />
+		<meta property="og:title" content={req.dscName} />
+		<meta property="og:description" content={req.dscDesc} />
+		<meta property="og:image" content={req.dscImg} />
+		<meta name="theme-color" content=#D4CBE5 />
+		<title>Join Us</title>
+	</head>
+	<body>
+		<h1>Redirecting...</h1>
+		<p>If you're seeing this, the site is most likely broken! Please contact Kyanoxia to fix it!</p>
+-	</body>
+</html>
