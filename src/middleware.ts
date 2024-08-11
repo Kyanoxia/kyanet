@@ -1,9 +1,8 @@
 import { defineMiddleware } from "astro:middleware";
-import type { MiddlewareHandler } from 'astro'
 
 export const onRequest = defineMiddleware (async (context, next) => {        
     console.log("MIDDLEWARE EXECUTING");
-    if (context.url.pathname === "/join") {
+    if (context.url.pathname === "/bruhyeet") {
         const res = await fetch(`https://discord.com/api/v10/invites/DVvGFXqpqH`);
         const data = await res.json();
 
