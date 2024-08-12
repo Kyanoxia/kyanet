@@ -2,7 +2,8 @@ import { defineMiddleware } from "astro:middleware";
 
 export const onRequest = defineMiddleware (async (context, next) => {        
     console.log("MIDDLEWARE EXECUTING");
-    if (context.url.pathname === "/about") {
+    console.log(context.request.headers.get("user-agent"))
+    if (context.url.pathname === "/join" && context.request.headers.get("user-agent") === "Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)") {
         const res = await fetch(`https://discord.com/api/v10/invites/DVvGFXqpqH`);
         const data = await res.json();
 
