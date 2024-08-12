@@ -2,7 +2,7 @@ import { defineMiddleware } from "astro:middleware";
 
 export const onRequest = defineMiddleware (async (context, next) => {        
     console.log("MIDDLEWARE EXECUTING");
-    if (context.url.pathname === "/bruhyeet") {
+    if (context.url.pathname === "/about") {
         const res = await fetch(`https://discord.com/api/v10/invites/DVvGFXqpqH`);
         const data = await res.json();
 
@@ -12,7 +12,7 @@ export const onRequest = defineMiddleware (async (context, next) => {
 
         console.log(data)
 
-        return Response.redirect(new URL("https://discord.com/invite/DVvGFXqpqH"), 302)
+        //return Response.redirect(new URL("https://discord.com/invite/DVvGFXqpqH"), 302)
     }
     console.log("MIDDLEWARE FINISHED")
     return next();

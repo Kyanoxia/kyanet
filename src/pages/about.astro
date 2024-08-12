@@ -10,9 +10,9 @@ const req = Astro.locals;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:site_name" content="VainDiscord by Kyanoxia" />
-		<meta property="og:title" content={req.dscName} />
-		<meta property="og:description" content={req.dscDesc} />
-		<meta property="og:image" content={req.dscImg} />
+		<meta property="og:title" content=`${req.dscName}` />
+		<meta property="og:description" content=`${req.dscDesc}` />
+		<meta property="og:image" content=`${req.dscImg}` />
 		<meta name="theme-color" content=#D4CBE5 />
 		<title>Join Us</title>
 	</head>
