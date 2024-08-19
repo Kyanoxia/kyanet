@@ -5,7 +5,7 @@ export const onRequest = defineMiddleware (async (context, next) => {
     console.log(context.request.headers.get("user-agent"))
 
     if (context.url.pathname === "/join") {
-        if (context.request.headers.get("user-agent") === "Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)") {
+        if (context.request.headers.get("user-agent")?.includes("bot", 0)) {
             const res = await fetch(`https://discord.com/api/v10/invites/DVvGFXqpqH`);
             const data = await res.json();
 
