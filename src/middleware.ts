@@ -12,6 +12,8 @@ export const onRequest = defineMiddleware (async (context, next) => {
             context.locals.dscName = data.guild.name;
             context.locals.dscImg = `https://cdn.discordapp.com/icons/${data.guild.id}/${data.guild.icon}`;
             context.locals.dscDesc = data.guild.description;
+
+            return next();
         }
 
         return Response.redirect(new URL("https://discord.com/invite/DVvGFXqpqH"), 302)
