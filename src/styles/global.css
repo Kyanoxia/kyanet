@@ -4,18 +4,18 @@
   font-family: multiplexed;
   font-weight: normal;
   font-style: normal;
-  src: url(font/multiplexed.ttf);
+  src: url(multiplexed.ttf);
 }
 
 @font-face {
-  src: url(font/QuantaGroteskPro-BlackItalic.ttf);
+  src: url(QuantaGroteskPro-BlackItalic.ttf);
   font-family: grotesk;
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  src: url(font/QuantaGroteskPro-Regular.ttf);
+  src: url(QuantaGroteskPro-Regular.ttf);
   font-family: grotesk;
   font-weight: normal;
   font-style: normal;
