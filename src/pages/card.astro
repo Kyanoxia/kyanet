@@ -1,5 +1,5 @@
 ---
-export const prerender = true
+export const prerender = false
 const pageTitle = "Kyanoxias Socials"
 
 const identity = {
@@ -19,7 +19,6 @@ import KFooter from "../components/KFooter.astro"
 
 <html lang="en">
 	<head>
-        <script src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
@@ -29,7 +28,8 @@ import KFooter from "../components/KFooter.astro"
 		<meta property="og:title" content=`${identity.name}ss Socials'` />
 		<meta property="og:description" content=`Want to know where ${identity.name} is?` />
 		<meta name="theme-color" content=#A37C44 />
-	</head>
+        <script src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
+    </head>
 	<body>
         <div class="content">
             <div class="social-con">
