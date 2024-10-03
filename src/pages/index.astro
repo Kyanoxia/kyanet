@@ -4,7 +4,7 @@ export const prerender = false;
 const pageTitle = "The Kyanet"
 
 const identity = {
-	name: "Kyanoxia",
+	name: "Kyanoxia Rivera",
 	country: "United States",
 	nickname: "Kya",
 	pronouns: "she/her",
@@ -15,6 +15,7 @@ const identity = {
 }
 
 import KFooter from "../components/KFooter.astro";
+import CalDisplay from "../components/CalDisplay.astro";
 import "../styles/global.css"
 ---
 
@@ -28,10 +29,11 @@ import "../styles/global.css"
 	</head>
 	<body style="background-color: #1b1b1b;">
 		<div class="content" style="display: flex; justify-content: center; align-items: center;">
-			<h1 class="grotesk-head-2" style="line-height: 1; font-size: 2.5em; margin-bottom: 0;">KYANOXIA RIVERA</h1>
+			<h1 class="grotesk-head-2" style="line-height: 1; font-size: 2.5em; margin-bottom: 0;">{identity.name}</h1>
 			<h1 class="grotesk-head" style="font-size: 5em; line-height: 0.75;">{pageTitle}</h1>
 		</div>
 		<a href="/card" class="dm-foot">COMING SOON</a>
+		<CalDisplay />
 	</body>
 	<footer>
 		<KFooter />
