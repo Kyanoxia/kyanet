@@ -43,7 +43,7 @@ import "../styles/global.css"
 			<p>Friday: {(typeof req.schedule["Friday"]?.categories[0] === 'undefined') ? 'Resting' : req.schedule["Friday"]?.categories[0]}</p>
 			<p>Saturday: {(typeof req.schedule["Saturday"]?.categories[0] === 'undefined') ? 'Resting' : req.schedule["Saturday"]?.categories[0]}</p>
 		</div>
-		<p>Calendar Images Unavailable! Please <a href="https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=z4pwosn4a3lyqhm139nw1wx6t5ytn2&redirect_uri=http://localhost:4321/schedule&scope=user%3Aread%3Achat">Connect with Twitch</a></p>
+		<p>If images are not loading, please <a href="https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=z4pwosn4a3lyqhm139nw1wx6t5ytn2&redirect_uri=http://localhost:4321/schedule&scope=user%3Aread%3Achat">Connect with Twitch.</a> <a href="/support/twitch-connection">Why am I seeing this?</a></p>
 	</body>
 	<footer>
 		<KFooter />
