@@ -1,5 +1,5 @@
 import { defineMiddleware } from "astro:middleware";
-import ical, { type CalendarComponent, type VEvent } from 'node-ical'
+import ical, { type CalendarComponent } from 'node-ical';
 
 export const onRequest = defineMiddleware (async (context, next) => {        
     console.log("MIDDLEWARE EXECUTING");
