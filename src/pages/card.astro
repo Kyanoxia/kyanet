@@ -32,7 +32,7 @@ import KFooter from "../components/KFooter.astro"
     </head>
 	<body>
         <div class="content">
-            <div class="social-con">
+            <div class="social-con flex-center">
                 <img width=100% class="banner" src="Kyanoxia-elegance-logo.png" alt="Elegant Black Gold Kyanoxia Banner"/>
                 <div class="socials">
                     <div class="social-card" onclick="location.href='https://kyanoxia.com/join';">
@@ -51,6 +51,12 @@ import KFooter from "../components/KFooter.astro"
                         <div class="sc-head">
                             <p class="multiplexed">TWITCH</p>
                             <i class="fa-brands fa-twitch fa-lg"></i>
+                        </div>
+                    </div>
+                    <div class="social-card" onclick="location.href='https://youtube.com/@kyanoxia';">
+                        <div class="sc-head">
+                            <p class="multiplexed">BLUESKY</p>
+                            <i class="fa-brands fa-bluesky fa-lg"></i>
                         </div>
                     </div>
                     <div class="social-card" onclick="location.href='https://x.com/kyanoxia';">
@@ -73,9 +79,7 @@ import KFooter from "../components/KFooter.astro"
                     </div>
                 </div>    
             </div>
+            <KFooter page="Card"/>
         </div>
 	</body>
-    <footer>
-        <KFooter />
-    </footer>
 </html>

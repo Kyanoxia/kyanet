@@ -45,7 +45,6 @@
   font-weight: 200;
   letter-spacing: 0.5ch;
   font-size: xx-large;
-  padding-bottom: 50px;
   text-decoration: none;
   color: whitesmoke;
 }
@@ -60,7 +59,6 @@ html {
 body {
   margin: 0 auto;
   width: 100%;
-  height: 100%;
   line-height: 1.5;
   text-align: center;
   justify-content: space-between;
@@ -77,11 +75,15 @@ h1 {
   font-size: 2.5rem;
 }
 
+.flex-center {
+  align-self: center;
+}
+
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 80ch;
   margin: 0 auto;
+  width: 100%;
   height: 100%;
 }
 
@@ -89,6 +91,7 @@ h1 {
   display: flex;
   flex-direction: column;
   margin: auto 0;
+  max-width: 80ch;
 }
 
 .separator-lg {
@@ -135,4 +138,50 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.calendar {
+  width: 80ch;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 2px solid #2b2b2b;
+  overflow: hidden;
+  gap: 5px;
+}
+
+.cal-entry {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 25px;
+}
+
+.cal-img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+}
+
+.cal-entry > p {
+  font-family: grotesk;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2em;
+  text-shadow: 0px 0px 10px black;
+}
+
+.cal-entry > span {
+  font-family: 'DM Sans';
+  font-weight: 300;
+  font-size: 2em;
+  font-style: italic;
+  text-shadow: 0px 0px 10px black;
 }

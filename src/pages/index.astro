@@ -26,7 +26,7 @@ import "../styles/global.css"
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body style="background-color: #1b1b1b;">
+	<body style="background-color: #1b1b1b; height: 100%">
 		<div class="content" style="display: flex; justify-content: center; align-items: center;">
 			<h1 class="grotesk-head-2" style="line-height: 1; font-size: 2.5em; margin-bottom: 0;">{identity.name}</h1>
 			<h1 class="grotesk-head" style="font-size: 5em; line-height: 0.75;">{pageTitle}</h1>
@@ -34,6 +34,6 @@ import "../styles/global.css"
 		<a href="/card" class="dm-foot">COMING SOON</a>
 	</body>
 	<footer>
-		<KFooter />
+		<KFooter page="Home"/>
 	</footer>
 </html>
