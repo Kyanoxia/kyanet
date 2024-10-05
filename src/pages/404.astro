@@ -1,0 +1,39 @@
+---
+export const prerender = false;
+
+const pageTitle = "The Kyanet"
+
+const identity = {
+	name: "Kyanoxia Rivera",
+	country: "United States",
+	nickname: "Kya",
+	pronouns: "she/her",
+	race: "Human Fox Hybrid",
+	discord: "DVvGFXqpqH",
+	occupation: "Graphic Designer",
+
+}
+
+import KFooter from "../components/KFooter.astro";
+import "../styles/global.css"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body style="background-color: #1b1b1b; height: 100%">
+		<div class="content" style="display: flex; justify-content: center; align-items: center;">
+			<h1 style="color: rgba(255, 255, 255, 0.5); font-family: 'DM Sans'; line-height: 1; font-size: 2.5em; margin-bottom: 0; font-weight:">404 Error</h1>
+			<h1 class="err-head" style="font-size: 5em; line-height: 0.75;">NOT FOUND</h1>
+			<p style="font-family: 'DM Sans'; color: rgba(255, 255, 255, 0.5);">If you're sure this is a mistake, please contact Kya to fix it!</p>
+		</div>
+	</body>
+	<footer>
+		<KFooter page="404 Not Found"/>
+	</footer>
+</html>

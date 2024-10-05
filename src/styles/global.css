@@ -21,9 +21,29 @@
   font-style: normal;
 }
 
+@font-face {
+  src: url(QuantaGroteskPro-Light.ttf);
+  font-family: grotesk;
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  src: url(QuantaGroteskPro-LightItalic.ttf);
+  font-family: grotesk;
+  font-weight: light;
+  font-style: italic;
+}
+
 .multiplexed{
   font-family: multiplexed;
   text-transform: lowercase;
+}
+
+.err-head {
+  font-family: 'DM Sans';
+  font-weight: 200;
+  font-style: italic;
 }
 
 .grotesk-head {
