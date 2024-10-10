@@ -1,7 +1,10 @@
 ---
 export const prerender = false;
 
-const pageTitle = "On Trauma Dumping..."
+const pageTitle = "On Trauma Dumping...";
+const pageDescription = "Trauma dumping is a hostile behavior that can hurt anyone involved...";
+const pageImage = "";
+const pageColor = "#1b1b1b";
 
 const identity = {
 	name: "Kyanoxia Rivera",
@@ -9,60 +12,70 @@ const identity = {
 	nickname: "Kya",
 	pronouns: "she/her",
 	race: "Human Fox Hybrid",
-	discord: "DVvGFXqpqH",
 	occupation: "Graphic Designer",
-
-}
+	iteration: 0
+};
 
 import KFooter from "../components/KFooter.astro";
-import "../styles/global.css"
+import "../styles/global.css";
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<script src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
-
+		
 		<meta property="og:site_name" content="The Kyanet" />
-		<meta property="og:title" content=`Please no Trauma Dumping!` />
-		<meta property="og:description" content=`Trauma dumping is a hostile behavior that can cause damage to anyone involved...` />
+		<meta property="og:title" content=`${pageTitle}` />
+		<meta property="og:description" content=`${pageDescription}` />
+		<meta property="og:image" content=`${pageImage}` />
 
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="The Kyanet" />
-		<meta name="twitter:title" content="Please no Traume Dumping!" />
-		<meta name="twitter:description" content="Trauma dumping is a hostile behavior that can cause damage to anyone involved..." />
+		<meta name="twitter:title" content=`${pageTitle}` />
+		<meta name="twitter:description" content=`${pageDescription}` />
+		<meta name="twitter:url" content=`https://kyanoxia.com/`>
+		<meta name="twitter:image" content=`${pageImage}` />
+
+		<meta itemprop="name" content=`${pageTitle}` />
+		<meta itemprop="description" content=`${pageDescription}` />
+		<meta itemprop="image" content=`${pageImage}` />
+
+		<meta name="theme-color" content=`${pageColor}` />
+
+		<title>{pageTitle}</title>
+
+		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
 	</head>
-	<body style="background-color: #1b1b1b; height: 100%; padding-top: 100px; display: flex;">
-		<div class="content" style="display: flex; align-items: center; font-family: 'General Sans', sans-serif; max-width: 80ch;">
-			<h1 style="margin-bottom: 50px;">{pageTitle}</h1>
+	<body style="background-color: #1b1b1b;">
+		<div class="content" style="text-align: center; max-width: 80ch;">
+			<h1 style="margin-top: 50px;">{pageTitle}</h1>
 			<h2 style="font-weight: 400; color: gray;">Unless otherwise specified, <span style="font-style: italic; text-decoration: underline; text-transform: uppercase;">don't do it!</span></h2>
 			<ul style="text-align: left; display: flex; flex-direction: column; gap: 1em; font-weight: 300; max-width: 60ch;">
 				<li>Trauma dumping is defined as unloading traumatic experiences on others without warning or invitation.</li>
 				<li>It can damage relationships and lead to anxiety, depression, and other mental health conditions.</li>
 			</ul>
 			<p style="font-weight: 300; color: gray; margin-bottom: 50px; max-width: 60ch;">In short, unless I know you well and it's both clear we are comfortable with each other, I don't want to hear about your problems.</p>
-			<p style="text-align: left; line-height: 1.5; text-indent: 4ch;;">If you do start trauma dumping on me, in DMs or otherwise, and I do not like it, I am going to tell you. I've come into contact with a couple communities in which nobody talks simply because someone is constantly trauma dumping in community spaces. If you need help, please use the resources at the bottom of this page.</p>
+			<p style="text-align: left; line-height: 1.5; text-indent: 4ch;">If you do start trauma dumping on me, in DMs or otherwise, and I do not like it, I am going to tell you. I've come into contact with a couple communities in which nobody talks simply because someone is constantly trauma dumping in community spaces. If you need help, please use the resources at the bottom of this page.</p>
+		
+			<div class="spacer"></div>
+
+			<div class="crisis" style="margin-bottom: 10px;">
+				<a class="crisis-help" href='https://988lifeline.org/'>
+					<i class="fa-solid fa-phone"></i>
+					<span>Lifeline 988</span>
+				</a>
+				<a class="crisis-help" href='https://www.crisistextline.org/'>
+					<i class="fa-solid fa-message"></i>
+					<span>Crisis Chat</span>
+				</a>
+				<a class="crisis-help" href='https://www.911.gov/'>
+					<i class="fa-solid fa-phone"></i>
+					<span>911</span>
+				</a>
+			</div>
 		</div>
-		<div class="crisis">
-			<a class="crisis-help" href='https://988lifeline.org/'>
-				<i class="fa-solid fa-phone"></i>
-				<span>Lifeline 988</span>
-			</a>
-			<a class="crisis-help" href='https://www.crisistextline.org/'>
-				<i class="fa-solid fa-message"></i>
-				<span>Crisis Chat</span>
-			</a>
-			<a class="crisis-help" href='https://www.911.gov/'>
-				<i class="fa-solid fa-phone"></i>
-				<span>911</span>
-			</a>
-		</div>
+		<KFooter page=`${pageTitle}` />
 	</body>
-	<footer>
-		<KFooter page=`${pageTitle}`/>
-	</footer>
 </html>

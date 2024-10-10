@@ -8,6 +8,7 @@ declare global {
             dscName: string;
             dscImg: string;
             dscDesc: string;
+            dscURL: string;
             schedule: CalendarEvent;
             welcomeTitle: string;
             orders: Map<string, object>;

@@ -1,8 +1,8 @@
 ---
 export const prerender = false;
 
-const pageTitle = "Home";
-const pageDescription = "Welcome to the Kyanet - Rivera's proxy to promethius.";
+const pageTitle = "Template";
+const pageDescription = "Template page for the kyanet.";
 const pageImage = "";
 const pageColor = "#1b1b1b";
 
@@ -49,14 +49,9 @@ import "../styles/global.css";
 		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
 	</head>
 	<body style="background-color: #1b1b1b;">
-		<div class="content" style="text-align: center; height: 100vh;">
-			<div class="headers" style="margin: auto 0;">
-				<h1 class="grotesk-head-2">{identity.name}</h1>
-				<h1 class="grotesk-head" style="font-size: 5em;">The Kyanet</h1>
-			</div>
-			<span class="dm-foot" style="font-size: xx-large;">COMING SOON...</span>
-			<a href="card" class="dm-foot" style="color: gray;">check my socials yo</a>
-			<div class="spacer" style="font-weight: 200;"></div>
+		<div class="content" style="text-align: center; max-width: 80ch;">
+			<h1>The Kyanet Page</h1>
+			<p>Every page will follow this specific design guideline.  The reason for that is because we are using flexbox to put the footer at the bottom of the page properly.  Shit's not easy, yo.  Wrap all the page content here and treat .content as the body tag.</p>
 		</div>
 		<KFooter page=`${pageTitle}` />
 	</body>
