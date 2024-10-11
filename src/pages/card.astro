@@ -1,85 +1,98 @@
 ---
-export const prerender = false
-const pageTitle = "Kyanoxias Socials"
+export const prerender = false;
+
+const pageTitle = "Card";
+const pageDescription = "Find Kyanoxia over the span of multiple online accounts including: YouTube, Twitch, BlueSky (fuck twitter), Instagram, and more!";
+const pageImage = "";
+const pageColor = "#1b1b1b";
 
 const identity = {
-	name: "Kyanoxia",
+	name: "Kyanoxia Rivera",
 	country: "United States",
 	nickname: "Kya",
 	pronouns: "she/her",
 	race: "Human Fox Hybrid",
-	discord: "DVvGFXqpqH",
 	occupation: "Graphic Designer",
+	iteration: 0
+};
 
-}
-
-import "../styles/global.css"
-import KFooter from "../components/KFooter.astro"
+import KFooter from "../components/KFooter.astro";
+import "../styles/global.css";
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		
+		<meta property="og:site_name" content="The Kyanet" />
+		<meta property="og:title" content=`${pageTitle}` />
+		<meta property="og:description" content=`${pageDescription}` />
+		<meta property="og:image" content=`${pageImage}` />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="The Kyanet" />
+		<meta name="twitter:title" content=`${pageTitle}` />
+		<meta name="twitter:description" content=`${pageDescription}` />
+		<meta name="twitter:url" content=`https://kyanoxia.com/`>
+		<meta name="twitter:image" content=`${pageImage}` />
+
+		<meta itemprop="name" content=`${pageTitle}` />
+		<meta itemprop="description" content=`${pageDescription}` />
+		<meta itemprop="image" content=`${pageImage}` />
+
+		<meta name="theme-color" content=`${pageColor}` />
+
 		<title>{pageTitle}</title>
-        <meta property="og:site_name" content="The Kyanet" />
-		<meta property="og:title" content=`${identity.name}'s Socials` />
-		<meta property="og:description" content=`Want to know where ${identity.name} is?` />
-		<meta name="theme-color" content=#A37C44 />
-        <script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
-    </head>
-	<body>
-        <div class="content">
-            <div class="social-con flex-center">
-                <img width=100% class="banner" src="Kyanoxia-elegance-logo.png" alt="Elegant Black Gold Kyanoxia Banner"/>
-                <div class="socials">
-                    <div class="social-card" onclick="location.href='https://kyanoxia.com/join';">
-                        <div class="sc-head">
-                            <p class="multiplexed">DISCORD</p>
-                            <i class="fa-brands fa-discord fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="social-card" onclick="location.href='https://youtube.com/@kyanoxia';">
-                        <div class="sc-head">
-                            <p class="multiplexed">YOUTUBE</p>
-                            <i class="fa-brands fa-youtube fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="social-card" onclick="location.href='https://twitch.tv/kyanoxia';">
-                        <div class="sc-head">
-                            <p class="multiplexed">TWITCH</p>
-                            <i class="fa-brands fa-twitch fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="social-card" onclick="location.href='https://youtube.com/@kyanoxia';">
-                        <div class="sc-head">
-                            <p class="multiplexed">BLUESKY</p>
-                            <i class="fa-brands fa-bluesky fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="social-card" onclick="location.href='https://x.com/kyanoxia';">
-                        <div class="sc-head">
-                            <p class="multiplexed">XITTER</p>
-                            <i class="fa-brands fa-x-twitter fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="social-card" onclick="location.href='https://instagram.com/kyanoxia';">
-                        <div class="sc-head">
-                            <p class="multiplexed">INSTAGRAM</p>
-                            <i class="fa-brands fa-instagram fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="social-card" onclick="location.href='https://reddit.com/user/kyanoxia';">
-                        <div class="sc-head">
-                            <p class="multiplexed">REDDIT</p>
-                            <i class="fa-brands fa-reddit fa-lg"></i>
-                        </div>
-                    </div>
-                </div>
-                <KFooter page=`${pageTitle}`/>
-            </div>
-        </div>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
+	</head>
+	<body style="background-color: #1b1b1b;">
+		<div class="content" style="text-align: center;">
+			<img src="Kyanoxia-elegance-logo.png" alt="Kyanoxia Banner" class="header-img">
+			<h1>Where can you find me?</h1>
+			<summary style="max-width: 80ch;">I offer plenty of ways to connect - below is a list that shows all of my socials! I may be active on some more than others, but I always try to keep up!</summary>
+
+			<div class="spacer" />
+
+			<div class="socials">
+				<a class="social-card" href='join'>
+					<span class="multiplexed">DISCORD</span>
+					<i class="fa-brands fa-discord fa-lg"></i>
+				</a>
+				<a class="social-card" href='https://youtube.com/@kyanoxia/'>
+					<span class="multiplexed">YOUTUBE</span>
+					<i class="fa-brands fa-youtube fa-lg"></i>
+				</a>
+				<a class="social-card" href='https://twitch.tv/kyanoxia/'>
+					<span class="multiplexed">TWITCH</span>
+					<i class="fa-brands fa-twitch fa-lg"></i>
+				</a>
+				<a class="social-card" href='https://bsky.app/profile/kyanoxia/'>
+					<span class="multiplexed">BLUESKY</span>
+					<i class="fa-brands fa-bluesky fa-lg"></i>
+				</a>
+				<a class="social-card" href='https://youtube.com/@kyanoxia/'>
+					<span class="multiplexed">INSTAGRAM</span>
+					<i class="fa-brands fa-instagram fa-lg"></i>
+				</a>
+				<a class="social-card" href='https://kyanoxia-shop.fourthwall.com/'>
+					<span class="multiplexed">MERCH</span>
+					<i class="fa-solid fa-shirt fa-lg"></i>
+				</a>
+				<a class="social-card" href='https://throne.com/kyanoxia/'>
+					<span class="multiplexed">THRONE</span>
+					<i class="fa-solid fa-crown fa-lg"></i>
+				</a>
+			</div>
+
+			<div class="spacer" />
+
+			<sub style="color: gray;">I try to order them from most to least active, so keep that in mind</sub>
+		</div>
+		<KFooter page=`${pageTitle}` />
 	</body>
 </html>

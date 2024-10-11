@@ -9,6 +9,7 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel(),
   integrations: [sitemap({
-    filter: (page) => page !== 'https://kyanoxia.com/template/',
+    filter: (page) => page !== 'https://kyanoxia.com/template/' &&
+                      page !== 'https://kyanoxia.com/404/',
   })]
 });

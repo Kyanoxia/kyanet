@@ -53,7 +53,25 @@ import "../styles/global.css";
 	<body style="background-color: #1b1b1b;">
 		<div class="content" style="text-align: center; max-width: 80ch;">
 			<h1>The Kyanet Page</h1>
-			<p>Every page will follow this specific design guideline.  The reason for that is because we are using flexbox to put the footer at the bottom of the page properly.  Shit's not easy, yo.  Wrap all the page content here and treat .content as the body tag.</p>
+			<h2>Why we follow this guide</h2>
+			<p>Every page will follow this specific design guideline. We have a few reasons for that actually.  One of which is SEO (Search-Engine-Optimization). Shit's not easy, yo. We want to have all of our pages to have at least a little bit of effort put in - so here's what we do for that:</p>
+			<ul style="text-align: left;">
+				<li>Only use 1 h1 tag per page</li>
+				<li>Use h2 tags to separate page topics</li>
+				<li>Use descriptive keywords in explanations and summaries</li>
+			</ul>
+
+			<div class="spacer"></div>
+
+			<h2>What about DOM structure?</h2>
+			<p>I purposefully designed the site in a way to NOT take advantage of the footer tag.  The reason for this is because in order to have a dynamic good-looking page footer, we need to use flexbox to push it to the bottom of the page.  If we format our entire HTML document as flex, we would have sizing and position issues on pages where content is larger than viewport height. So how should we compose our pages?</p>
+			<ul style="text-align: left;">
+				<li>Wrap EVERYTHING in the .content div</li>
+				<li>Treat .content as the body tag</li>
+				<li>Use a separate stylesheet, or inline css where you need modifications</li>
+			</ul>
+
+			<h3>Remember you can use a tags as containers too, you don't need to use a div with onclick. That's bad for SEO.</h3>
 		</div>
 		<KFooter page=`${pageTitle}` />
 	</body>
