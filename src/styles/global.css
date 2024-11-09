@@ -9,28 +9,28 @@
 }
 
 @font-face {
-  src: url(QuantaGroteskPro-BlackItalic.ttf);
+  src: url(public/QuantaGroteskPro-BlackItalic.ttf);
   font-family: grotesk;
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  src: url(QuantaGroteskPro-Regular.ttf);
+  src: url(public/QuantaGroteskPro-Regular.ttf);
   font-family: grotesk;
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  src: url(QuantaGroteskPro-Light.ttf);
+  src: url(public/QuantaGroteskPro-Light.ttf);
   font-family: grotesk;
   font-weight: light;
   font-style: normal;
 }
 
 @font-face {
-  src: url(QuantaGroteskPro-LightItalic.ttf);
+  src: url(public/QuantaGroteskPro-LightItalic.ttf);
   font-family: grotesk;
   font-weight: light;
   font-style: italic;
@@ -250,4 +250,9 @@ h1 {
   flex:  1 1 100px;
   white-space: nowrap;
   width: 100px;
+}
+
+.skycordlogo {
+  fill: #369cff;
+  width: 50%;
 }
