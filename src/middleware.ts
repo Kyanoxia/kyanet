@@ -24,35 +24,6 @@ export const onRequest = defineMiddleware (async (context, next) => {
 
         return Response.redirect(new URL(`https://discord.com/invite/${inv}`), 302)
     }
-
-    if (context.url.pathname === "/schedule" || context.url.pathname === "/join/") {
-        if (String(context.url).includes("#access_token=")) {
-
-        }
-        // Initialize the interface
-        interface CalendarEvent {
-            [index: string]: CalendarComponent;
-        }
-        
-        var rawEvents = {} as CalendarEvent
-        var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
-        // Store API response in webEvents
-        const webEvents = await ical.fromURL('https://api.twitch.tv/helix/schedule/icalendar?broadcaster_id=617052436');
-
-        // For every event, as long as it's not a calendar header, store the event in rawEvents with the Weekday as key
-        for (var k in webEvents) {
-            if (webEvents.hasOwnProperty(k) && k != 'refresh-interval' && k != 'vcalendar') {
-                var ev = webEvents[k];
-
-                /*  @ts-expect-error  */
-                rawEvents[days[ev.start.getDay()]] = ev;
-            }
-        }
-
-        // Pass it to the schedule local
-        context.locals.schedule = rawEvents;
-    }
     
     console.log("MIDDLEWARE FINISHED")
     return next();

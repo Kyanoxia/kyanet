@@ -2,8 +2,8 @@
 export const prerender = false;
 
 const pageTitle = "Card";
-const pageDescription = "Find Kyanoxia over the span of multiple online accounts including: YouTube, Twitch, BlueSky (fuck twitter), Instagram, and more!";
-const pageImage = "";
+const pageDescription = "Contact me through any of the following";
+const pageImage = "img/kyanet-logo.png";
 const pageColor = "#1b1b1b";
 
 const identity = {
@@ -12,7 +12,7 @@ const identity = {
 	nickname: "Kya",
 	pronouns: "she/her",
 	race: "Human Fox Hybrid",
-	occupation: "Graphic Designer",
+	occupation: "Software Developer",
 	iteration: 0
 };
 
@@ -22,7 +22,7 @@ import "../styles/global.css";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="svg/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -51,48 +51,52 @@ import "../styles/global.css";
 		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
 	</head>
 	<body style="background-color: #1b1b1b;">
-		<div class="content" style="text-align: center;">
-			<img src="Kyanoxia-elegance-logo.png" alt="Kyanoxia Banner" class="header-img">
-			<h1>Where can you find me?</h1>
-			<summary style="max-width: 80ch;">I offer plenty of ways to connect - below is a list that shows all of my socials! I may be active on some more than others, but I always try to keep up!</summary>
-
-			<div class="spacer" />
-
-			<div class="socials">
-				<a class="social-card" href='join'>
-					<span class="multiplexed">DISCORD</span>
-					<i class="fa-brands fa-discord fa-lg"></i>
-				</a>
-				<a class="social-card" href='https://youtube.com/@kyanoxia/'>
-					<span class="multiplexed">YOUTUBE</span>
-					<i class="fa-brands fa-youtube fa-lg"></i>
-				</a>
-				<a class="social-card" href='https://twitch.tv/kyanoxia/'>
-					<span class="multiplexed">TWITCH</span>
-					<i class="fa-brands fa-twitch fa-lg"></i>
-				</a>
-				<a class="social-card" href='https://bsky.app/profile/kyanoxia/'>
-					<span class="multiplexed">BLUESKY</span>
-					<i class="fa-brands fa-bluesky fa-lg"></i>
-				</a>
-				<a class="social-card" href='https://youtube.com/@kyanoxia/'>
-					<span class="multiplexed">INSTAGRAM</span>
-					<i class="fa-brands fa-instagram fa-lg"></i>
-				</a>
-				<a class="social-card" href='https://kyanoxia-shop.fourthwall.com/'>
-					<span class="multiplexed">MERCH</span>
-					<i class="fa-solid fa-shirt fa-lg"></i>
-				</a>
-				<a class="social-card" href='https://throne.com/kyanoxia/'>
-					<span class="multiplexed">THRONE</span>
-					<i class="fa-solid fa-crown fa-lg"></i>
-				</a>
+		<div class="center" style="align-items: center; display: flex; flex-direction: column; gap: 2.5em; margin: 5em 2em;">
+			<div class="vstack title" style="text-align: center; margin-bottom: 8em;">
+				<h1 style="font-size: 5em; text-align: center;"><a href="/" class="grotesk-head">The Kyanet</a></h1>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">私について知っておくべきこと</span>
 			</div>
-
-			<div class="spacer" />
-
-			<sub style="color: gray;">I try to order them from most to least active, so keep that in mind</sub>
+			<a href="https://kyanoxia.com/join" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: left;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Discord</h2>
+				<p class="description">Most active here, will respond quickest if you need to talk. Feel free to join.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">そしてあなたは私の聖域に自分自身を押し込みます</span>
+			</a>
+			<a href="https://bsky.app/profile/kyanoxia.com" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: right;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">BlueSky</h2>
+				<p class="description">Twitter's younger more behaved sibling. I'm active here the most. DMs welcome.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">終わりのないとりとめのない物語</span>
+			</a>
+			<a href="https://github.com/kyanoxia" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: left;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">GitHub</h2>
+				<p class="description">Something to do with programming.  Not really sure on that one yet.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">宇宙を暗号化してやる</span>
+			</a>
+			<a href="https://youtube.com/@Kyanoxia" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: right;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">YouTube</h2>
+				<p class="description">Video Archives of my Shenanigans. I'm not super active here, but when I post you don't want to miss it.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">私のビデオ</span>
+			</a>
+			<a href="https://twitch.tv/kyanoxia" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: left;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Twitch</h2>
+				<p class="description">I'll rarely stream, but when I do, it's a lot of shenanigans. I also tend to doxx myself a lot by accident.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">私が自分を失うのを見てください</span>
+			</a>
+			<a href="https://instagram.com/kyanoxia" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: right;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Instagram</h2>
+				<p class="description">A more personal account of the goings-on in my life. Follows are appreciated, although I'm not very active here.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">私の人生の個人的な記録</span>
+			</a>
+			<a href="https://kyanoxia-shop.fourthwall.com" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: left;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Fourthwall</h2>
+				<p class="description">I have stuff available for purchase here if you want it. Drops are rare and not guaranteed on a regular basis.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">私の皮を着ないと死んでしまいます。</span>
+			</a>
+			<a href="https://throne.com/kyanoxia" class="vstack social" style="margin: auto 0; max-width: 80ch; text-align: right;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Throne</h2>
+				<p class="description">If you like my work and want to buy me a gift, you can do that here.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">あなたは私にひざまずくでしょう</span>
+			</a>
 		</div>
-		<KFooter page=`${pageTitle}` color="#1b1b1b"/>
+		<KFooter page=`${pageTitle}` color="#1b1b1b" />
 	</body>
 </html>

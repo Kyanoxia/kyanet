@@ -3,7 +3,7 @@ export const prerender = false;
 
 const pageTitle = "404 Not Found";
 const pageDescription = "Uh Oh! Something went wrong here...";
-const pageImage = "";
+const pageImage = "img/kyanet-logo.png";
 const pageColor = "#1b1b1b";
 
 const identity = {
@@ -22,7 +22,7 @@ import "../styles/global.css";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="svg/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -49,7 +49,7 @@ import "../styles/global.css";
 		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
 	</head>
 	<body style="background-color: #1b1b1b;">
-		<div class="content" style="text-align: center; height: 100vh;">
+		<div class="content center" style="text-align: center; height: 100vh;">
 			<div class="headers" style="margin: auto 0;">
 				<h1 class="grotesk-head-2">404</h1>
 				<h1 class="grotesk-head" style="font-size: 5em;">PAGE NOT FOUND</h1>

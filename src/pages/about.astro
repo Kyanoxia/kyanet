@@ -1,0 +1,105 @@
+---
+export const prerender = false;
+
+const pageTitle = "About";
+const pageDescription = "Kyanoxia is an aspiring developer and digital content creator";
+const pageImage = "img/kyanet-logo.png";
+const pageColor = "#1b1b1b";
+
+const identity = {
+	name: "Kyanoxia Rivera",
+	country: "United States",
+	nickname: "Kya",
+	pronouns: "she/her",
+	race: "Human Fox Hybrid",
+	occupation: "Software Developer",
+	iteration: 0
+};
+
+import KFooter from "../components/KFooter.astro";
+import "../styles/global.css";
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="svg/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<meta property="og:site_name" content="The Kyanet" />
+		<meta property="og:title" content=`${pageTitle}` />
+		<meta property="og:description" content=`${pageDescription}` />
+		<meta property="og:image" content=`${pageImage}` />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="The Kyanet" />
+		<meta name="twitter:title" content=`${pageTitle}` />
+		<meta name="twitter:description" content=`${pageDescription}` />
+		<meta name="twitter:url" content=`https://kyanoxia.com/`>
+		<meta name="twitter:image" content=`${pageImage}` />
+
+		<meta itemprop="name" content=`${pageTitle}` />
+		<meta itemprop="description" content=`${pageDescription}` />
+		<meta itemprop="image" content=`${pageImage}` />
+
+		<meta name="theme-color" content=`${pageColor}` />
+
+		<title>{pageTitle}</title>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
+	</head>
+	<body style="background-color: #1b1b1b;">
+		<div class="center" style="align-items: center; display: flex; flex-direction: column; gap: 10em; margin: 5em 2em;">
+			<div class="vstack title" style="text-align: center;">
+				<h1 style="font-size: 5em; text-align: center;"><a href="/" class="grotesk-head">The Kyanet</a></h1>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">私について知っておくべきこと</span>
+			</div>
+			<div class="vstack" style="margin: auto 0; max-width: 80ch;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">{identity.name}</h2>
+				<p class="description">Kya, formerly known by the pseudonym “Spektacle,” is a 17-year-old developer and digital creator specializing in web technologies. Her journey in the tech world began at a young age, driven by a passion for creating innovative web solutions and engaging digital content.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">導入</span>
+			</div>
+			<div class="vstack" style="margin: auto 0; max-width: 80ch; text-align: right;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em;">Early Life and Education</h2>
+				<p class="description">Born in 2007, Kyanoxia exhibited an early interest in technology and digital media. Her curiosity led her to explore various programming languages and web development tools during her formative years. This self-driven exploration laid the foundation for her future endeavors in the tech industry.</p>
+				<p class="description">At the early age of 16, Kyanoxia obtained her high school diploma, showing her hard work and dedication to education during her childhood. Shortly after, she enrolled in college classes, with the plan to form a career in software development and cyber security.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">幼少期の人生と教育</span>
+			</div>
+			<div class="vstack" style="margin: auto 0; max-width: 80ch; text-align: left;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Career and Projects</h2>
+				<p class="description">Over the years, Kyanoxia embarked on several notable projects:</p>
+				<ul class="description" style="margin-top: 0; color: #9c9c9c;">
+					<li>Yugen-Electron-Wrapper: A cross-platform Proof-of-Concept Electron wrapper for Yugen, integrated with AdBlock functionality, enhancing user experience by providing a seamless and ad-free environment.</li>
+					<div class="spacer"></div>
+					<li>Skycord: A powerful Discord bot to subscribe to BlueSky accounts and announce new posts in any given channel, promoting ease of use and community participation.</li>
+				</ul>
+				<p class="description">These projects, among others, are showcased on her GitHub profile, reflecting her commitment to open-source development and community engagement.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">キャリアとプロジェクト</span>
+			</div>
+			<div class="vstack" style="margin: auto 0; max-width: 80ch; text-align: right;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Wishes and Plans</h2>
+				<p class="description">As she continues to develop her skills and expand her portfolio, Kyanoxia aims to explore new technologies and creative avenues. Her dedication to learning and innovation positions her as a promising figure in the tech and digital content creation landscape.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">願いと計画</span>
+			</div>
+			<div class="vstack" style="margin: auto 0; max-width: 80ch; text-align: left;">
+				<h2 class="grotesk-head-2" style="font-size: 2.5em">Online Presence</h2>
+				<p class="description">Beyond development, Kyanoxia maintains an active online presence:</p>
+				<ul class="description" style="margin-top: 0; color: #9c9c9c;">
+					<li>YouTube: She shares insights into her projects, tutorials, and personal experiences, fostering a community of like-minded individuals interested in technology and digital creation.</li>
+					<div class="spacer"></div>
+					<li>Twitch: Her streams focus on 3D art and gaming content, providing a platform for real-time interaction with her audience and showcasing her versatility in digital media.</li>
+				</ul>
+				<p class="description">Kyanoxia is known for her active engagement with the tech community. She participates in forums, collaborates on open-source projects, and shares her knowledge through various platforms, contributing to the collective growth and innovation within the industry.</p>
+				<p class="description">Her personal website, “The Kyanet,” serves as a central hub for her projects and social media links, offering visitors a comprehensive view of her work and online activities.</p>
+				<span class="dm-foot" style="color: gray; font-weight: 500;">オンラインでの存在感</span>
+			</div>
+			<div class="vstack" style="margin: auto 0; text-align: center;">
+				<p class="description">If you'd like to contact me, you can find my socials using the link below</p>
+				<a href="card" class="dm-foot" style="color: gray;">check my socials yo</a>
+			</div>
+		</div>
+		<KFooter page=`${pageTitle}` color="#1b1b1b" />
+	</body>
+</html>
