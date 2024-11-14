@@ -122,8 +122,8 @@ h2 {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
   position: relative;
+  margin: 0px 1em;
 }
 
 .center {
@@ -267,11 +267,20 @@ h2 {
 .skycordlogo {
   fill: #369cff;
   width: 50%;
+  min-height: 100px;
+  max-width: 300px;
+  max-height: 200px;
 }
 
 .vstack {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.hstack {
+  display: flex;
+  flex-direction: row;
   width: 100%;
 }
 
