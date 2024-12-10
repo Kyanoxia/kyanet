@@ -264,12 +264,8 @@ h2 {
   width: 100px;
 }
 
-.skycordlogo {
-  fill: #369cff;
-  width: 50%;
-  min-height: 100px;
-  max-width: 300px;
-  max-height: 200px;
+.orchidlogo {
+  max-width: 100%;
 }
 
 .vstack {
