@@ -1,30 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-
 export const prerender = false;
 
-const pageTitle = "Orchid - Where Bluesky Meets Discord";
-const pageDescription = "Gracefully bridge any Bluesky account to an Discord channel.";
+const pageTitle = "Orchid";
+const pageDescription = "Where Bluesky Meets Discord.  Gracefully bridge your community with huge customizability.";
 const pageImage = "img/Logo.png";
-const pageColor = "#eb3477";
+const pageColor = "#FF5E9A";
 
-const identity = {
-	name: "Kyanoxia Rivera",
-	country: "United States",
-	nickname: "Kya",
-	pronouns: "she/her",
-	race: "Human Fox Hybrid",
-	occupation: "Graphic Designer",
-	iteration: 0
-};
-
+import { Image } from "astro:assets";
 import KFooter from "../components/KFooter.astro";
-import "../styles/global.css";
+import "../styles/orchid.css";
+
+import post from "../../public/img/orchid-showcase.png";
+import list from "../../public/img/orchid-list.png";
+import connect from "../../public/img/orchid-connect.png";
+import provider from "../../public/img/orchid-provider.png";
 ---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="svg//favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="svg/orchid-logo.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -51,22 +45,71 @@ import "../styles/global.css";
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
 		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
+		<link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601,700,701,1,2&display=swap" rel="stylesheet">
 	</head>
-	<body style="background: linear-gradient(-45deg, rgba(245, 66, 147), rgba(255, 153, 153)); background-repeat: no-repeat; background-attachment: fixed;">
-		<div class="spacer"></div>
-		<div class="content center" style="text-align: center; max-width: 80ch; margin: auto 1em; padding: 2em; background-color: white; border-radius: 15px; box-shadow: 0px 0px 50px rgba(0, 0, 0, .25); height: 100%">
-            <img src="img/SocialHero.png" alt="A minimalist pink Orchid flower, with the text 'Orchid: Where Bluesky meets Discord'" class="orchidlogo">
-			<div class="spacer"></div>
-            <h1 style="color: black; font-weight: 500; font-size: xx-large">Reliable Post Announcements</h1>
-			<p style="color: black;">Orchid is an expert-coded Discord bot created for the sole purpose of announcing your new Bluesky posts in any channel you want.  Simply add the bot, and use the /connect command to subscribe to your account.  Using the Bluesky Jetstream, posts will be announced in less than a mere 5 seconds.</p>
-			<img src="img/orchid-showcase.png" alt="Screenshot of a Discord embed posted by Skycord." style="border-radius: 10px; width: 100%; max-width: 500px;">
-			<div class="spacer"></div>
-			<div class="hstack" style="width: 100%; justify-content: center;">
-				<a href="https://github.com/kyanoxia/orchid" style="background-color: #eb3477; padding: 10px; border-radius: 7px; margin: 5px;">Get it on GitHub</a>
-				<a href="https://discord.com/oauth2/authorize?client_id=1297227452707373267" style="background-color: #eb3477; padding: 10px; border-radius: 7px; margin: 5px;">Invite to Server</a>
+	<body style="background-color: #1b1b1b;">
+		<div class="content center" style="text-align: center;">
+			<div class="topbar">
+				<a href="https://bsky.app/profile/orchid.kyanoxia.com">
+					<img src="svg/orchid-logo.svg" alt="Orchid Logo" class="logo">
+				</a>
+				<a href="https://bsky.app/profile/orchid.kyanoxia.com/">
+					<span class="page-header">Orchid</span>
+				</a>
 			</div>
+			<div class="hero">
+				<div class="landing vstack">
+					<div class="vstack" id="landing">
+						<h1 class="head-large">Gracefully bridge your Bluesky account and Discord channels.</h1>
+						<p>Orchid is a FOSS Discord App created to forward Bluesky posts to your Discord community.</p>
+					</div>
+					<div class="cta hstack">
+						<a class="button secondary" href="https://github.com/Kyanoxia/orchid">GitHub</a>
+						<a class="button" href="https://discord.com/oauth2/authorize?client_id=1297227452707373267">Add Orchid</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="separator"/>
+
+			<div class="information">
+				<div class="deck">
+					<div class="card">
+						<Image src={post} alt="Orchid Post" />
+						<div>
+							<h3>Built for Speed</h3>
+							<p>Orchid forwards posts with an average of under one second to all of your Discord channels, emphasizing urgency in response time and ensuring your community is notified for time-sensitive posts.</p>
+						</div>
+					</div>
+					<div class="card reverse">
+						<Image src={list} alt="Orchid Post" />
+						<div>
+							<h3>Alts? Yeah, we got you.</h3>
+							<p>With no software limit, you can connect as many accounts as you need in one server, or even one channel.  This opens infinite possibilities for large communities, and small projects alike.</p>
+						</div>
+					</div>
+					<div class="card">
+						<Image src={connect} alt="Orchid Post" />
+						<div>
+							<h3>Keeping secrets?</h3>
+							<p>Orchid uses Regex matching as a blacklist filter, which provides a customizable way to blacklist or whitelist posts with certain content or tags.</p>
+						</div>
+					</div>
+					<div class="card reverse">
+						<Image src={provider} alt="Orchid Post" />
+						<div>
+							<h3>Bsky embeds don't cut it</h3>
+							<p>Of course, that's why we've enabled the use of several different embed providers (we love you bluesky).  In case something goes down or stops working, you can rest assured that you have extensive options available for you.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="separator"/>
+			<p>
+				Convinced?  Go ahead and add the bot to your server, I guarantee you won't regret it.
+			</p>
+			<div class="separator"/>
 		</div>
-		<div class="spacer"></div>
-		<KFooter page=`${pageTitle}` color="white" />
+		<KFooter page=`${pageTitle} | Design Inspiration from Midnight Wolf` color="#1b1b1b" />
 	</body>
 </html>
