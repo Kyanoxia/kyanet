@@ -176,7 +176,7 @@ img {
 .deck {
     display: flex;
     flex-direction: column;
-    gap: 20em;
+    gap: 10em;
 }
 
 .card {
