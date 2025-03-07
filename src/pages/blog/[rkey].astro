@@ -1,0 +1,72 @@
+---
+import { marked } from 'marked';
+
+export const prerender = false;
+const {rkey} = Astro.params;
+
+const did = "did:plc:cocpebhxzqhh2vxsp4ivzdbr";
+const res = await fetch(`https://blewit.us-west.host.bsky.network/xrpc/com.atproto.repo.getRecord?repo=${did}&collection=com.whtwnd.blog.entry&rkey=${rkey}`);
+const data = await res.json();
+const record = data.value;
+const post = marked.parse(record.content);
+
+const pageTitle = record.title;
+const pageDescription = record.content.substring(0, 97) + "...\n\nRead More";
+const pageImage = "/svg/favicon.svg";
+const pageColor = "#FF5E9A";
+
+import { Image } from "astro:assets";
+import KFooter from "../../components/KFooter.astro";
+import "../../styles/blog.css";
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/svg/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<meta property="og:site_name" content="The Kyanet" />
+		<meta property="og:title" content=`${pageTitle}` />
+		<meta property="og:description" content=`${pageDescription}` />
+		<meta property="og:image" content=`${pageImage}` />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="The Kyanet" />
+		<meta name="twitter:title" content=`${pageTitle}` />
+		<meta name="twitter:description" content=`${pageDescription}` />
+		<meta name="twitter:url" content=`https://kyanoxia.com/`>
+		<meta name="twitter:image" content=`${pageImage}` />
+
+		<meta itemprop="name" content=`${pageTitle}` />
+		<meta itemprop="description" content=`${pageDescription}` />
+		<meta itemprop="image" content=`${pageImage}` />
+
+		<meta name="name" content=`${pageTitle}` />
+		<meta name="description" content=`${pageDescription}` />
+		<meta name="image" content=`${pageImage}` />
+
+		<meta name="theme-color" content=`${pageColor}` />
+
+		<title>{pageTitle}</title>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601,700,701,1,2&display=swap" rel="stylesheet">
+	</head>
+	<body style="background-color: #1b1b1b;">
+		<div class="vstack title" style="text-align: center;">
+			<span style="font-size: 5em; text-align: center;"><a href="/" class="grotesk-head" style="text-decoration: none; color: white;">The Kyanet</a></span>
+			<span class="dm-foot" style="color: gray; font-weight: 500;">私について知っておくべきこと</span>
+		</div>
+		<h1 id="title">{record.title}</h1>
+		<div class="content center">
+			<article set:html={post}>
+		</div>
+		<KFooter page=`${pageTitle}` color="#1b1b1b" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nnfx-dark.min.css">
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+		<script is:inline>hljs.highlightAll();</script>
+	</body>
+</html>

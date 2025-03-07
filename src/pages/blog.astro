@@ -1,0 +1,96 @@
+---
+import { marked } from 'marked';
+
+export const prerender = false;
+
+const pageTitle = "Blog";
+const pageDescription = "Kyanoxia's personal blog list.  Powered by ATProtocol and WhiteWind.";
+const pageImage = "svg/favicon.svg";
+const pageColor = "#FF5E9A";
+const did = "did:plc:cocpebhxzqhh2vxsp4ivzdbr";
+
+const res = await fetch(`https://blewit.us-west.host.bsky.network/xrpc/com.atproto.repo.listRecords?repo=${did}&collection=com.whtwnd.blog.entry`);
+const data = await res.json();
+var records = data.records;
+
+records = records.filter((rec: { value: { visibility: string; }; }) => {return rec.value.visibility === "public"});
+
+import { Image } from "astro:assets";
+import KFooter from "../components/KFooter.astro";
+import "../styles/blog.css";
+import { DevToolbarRadioCheckbox } from 'astro/runtime/client/dev-toolbar/ui-library/radio-checkbox.js';
+import type { string, undefined } from 'astro:schema';
+import type { convertTypeAcquisitionFromJson } from 'typescript';
+import type { getDataEntryById } from 'astro:content';
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/svg/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<meta property="og:site_name" content="The Kyanet" />
+		<meta property="og:title" content=`${pageTitle}` />
+		<meta property="og:description" content=`${pageDescription}` />
+		<meta property="og:image" content=`${pageImage}` />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="The Kyanet" />
+		<meta name="twitter:title" content=`${pageTitle}` />
+		<meta name="twitter:description" content=`${pageDescription}` />
+		<meta name="twitter:url" content=`https://kyanoxia.com/`>
+		<meta name="twitter:image" content=`${pageImage}` />
+
+		<meta itemprop="name" content=`${pageTitle}` />
+		<meta itemprop="description" content=`${pageDescription}` />
+		<meta itemprop="image" content=`${pageImage}` />
+
+		<meta name="name" content=`${pageTitle}` />
+		<meta name="description" content=`${pageDescription}` />
+		<meta name="image" content=`${pageImage}` />
+
+		<meta name="theme-color" content=`${pageColor}` />
+
+		<title>{pageTitle}</title>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601,700,701,1,2&display=swap" rel="stylesheet">
+	</head>
+	<body style="background-color: #1b1b1b;">
+		<div class="vstack title" style="text-align: center;">
+			<span style="font-size: 5em; text-align: center;"><a href="/" class="grotesk-head" style="text-decoration: none; color: white;">The Kyanet</a></span>
+			<span class="dm-foot" style="color: gray; font-weight: 500;">私について知っておくべきこと</span>
+		</div>
+		<div class="title vstack">
+			<h1>Blog</h1>
+			<p>This is where I'll post a bunch of random dumb shit, so if you find it interesting be sure to check back here or on <a href="https://whtwnd.com/kyanoxia.com">WhiteWind</a> periodically.</p>
+		</div>
+		<div class="deck vstack">
+			{records.map((record: { value: { title: string; }; }) => (
+				//@ts-expect-error
+				<a class="card vstack" href={"/blog" + record.uri.replace(/^(.*?)\/com.whtwnd.blog.entry/g, '')}>
+					<h2>{record.value.title}</h2>
+					<div class="hstack info">
+						<sub>{function () {
+								//@ts-expect-error
+								const date = new Date(record.value.createdAt);
+
+								//@ts-expect-error
+								const ret = date.toLocaleDateString(undefined, {weekday: 'long'}) + " " +
+								//@ts-expect-error
+											date.toLocaleDateString(undefined, {month: 'long'}) + " " +
+											date.getDate() + ", " + 
+											date.getFullYear();
+								
+								return ret;
+							}}
+						</sub>
+					</div>
+				</a>
+			))}
+		</div>
+		<KFooter page=`${pageTitle}` color="#1b1b1b" />
+	</body>
+</html>
