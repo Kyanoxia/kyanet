@@ -30,7 +30,7 @@ const socials = {
 }
 ---
 <Layout props={props}>
-	<div class="hero jarallax">
+	<div data-jarallax data-speed="0.5" class="hero jarallax">
 		<Image class="heroimage jarallax-img" src={images[hero]()} alt="A blurred gradient"></Image>
 		<div class="vstack">
 			<Logo fill="#FFFFFF" id="headlogo" />
@@ -97,6 +97,4 @@ const socials = {
 	<div class="spacer"></div>
 	<div class="spacer"></div>
 	<div class="spacer"></div>
-
-	<script src="./src/pages/scripts/index.js" type="module"/>
 </Layout>

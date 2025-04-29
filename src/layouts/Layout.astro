@@ -42,7 +42,8 @@ const canonicalUrl = new URL(Astro.url.pathname, import.meta.env.SITE).href;
 
 		<title>{props.title}</title>
 
-		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
+		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous" />
+		<script src="jarallax/dist/jarallax.min.js" />
 	</head>
 	<body>
 		<slot />
