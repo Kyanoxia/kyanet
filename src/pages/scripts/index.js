@@ -1,4 +1,4 @@
-import { jarallax, jarallaxVideo } from "https://cdn.jsdelivr.net/npm/jarallax@2/+esm";
+import { jarallax } from "https://cdn.jsdelivr.net/npm/jarallax@2/+esm";
 
   // Optional video extension
   //jarallaxVideo();
