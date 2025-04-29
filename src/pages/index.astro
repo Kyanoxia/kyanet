@@ -1,84 +1,102 @@
 ---
 export const prerender = false;
 
-const pageTitle = "Home";
-const pageDescription = "Welcome to the Kyanet";
-const pageImage = "img/kyanet-logo.png";
-const pageColor = "#1b1b1b";
+import Layout from "../layouts/Layout.astro";
+import "../styles/index.css";
 
-const identity = {
-	name: "Kyanoxia Rivera",
-	country: "United States",
-	nickname: "Kya",
-	pronouns: "she/her",
-	race: "Human Fox Hybrid",
-	occupation: "Graphic Designer",
-	iteration: 0
+import type { ImageMetadata } from 'astro';
+import { Image } from "astro:assets";
+
+import AVIN from "../components/AVIN.astro";
+import Logo from "../../public/svg/Kyanoxia.svg";
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../../public/img/portfolio/render/thumbnails/*.{jpeg,jpg,png,gif}');
+
+const hero = Object.keys(images)[Math.floor(Math.random() * Object.keys(images).length)];
+
+const props = {
+	siteName: "The Kyanet",
+	title: "Home",
+	description: "Art is subjective",
+	favicon: "svg/favicon.svg",
+	image: "svg/favicon.svg",
+	color: "#FFFFFF"
 };
 
-import KFooter from "../components/KFooter.astro";
-import "../styles/global.css";
+const socials = {
+	BSKY: "https://bsky.app/profile/did:plc:cocpebhxzqhh2vxsp4ivzdbr",
+	YT: "https://youtube.com/@Kyanoxia",
+	DSC: "https://kyanoxia.com/join"
+}
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="svg/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<meta property="og:site_name" content="The Kyanet" />
-		<meta property="og:title" content={pageTitle} />
-		<meta property="og:description" content={pageDescription} />
-		<meta property="og:image" content={pageImage} />
-		<meta property="og:url" content="https://kyanoxia.com/">
-
-		<meta property="description" content={pageDescription} />
-
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="The Kyanet" />
-		<meta name="twitter:title" content={pageTitle} />
-		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:url" content=`https://kyanoxia.com/`>
-		<meta name="twitter:image" content={pageImage} />
-
-		<meta itemprop="name" content={pageTitle} />
-		<meta itemprop="description" content={pageDescription} />
-		<meta itemprop="image" content={pageImage} />
-
-		<meta name="name" content=`${pageTitle}` />
-		<meta name="description" content=`${pageDescription}` />
-		<meta name="image" content=`${pageImage}` />
-
-		<meta name="theme-color" content={pageColor} />
-
-		<title>{pageTitle}</title>
-
-		<link rel="sitemap" href="/sitemap-index.xml" />
-
-		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
-	</head>
-	<body style="background-color: #1b1b1b;">
-		<div class="content center" style="text-align: center; max-width: 80ch; margin: auto 0px; padding: 50px;">
-			<div class="headers vstack" style="margin: auto 0; gap: 5em;">
-				<div class="vstack">
-					<span class="grotesk-head-2" style="font-size: 2.5em">Welcome to</span>
-					<h1 class="grotesk-head" style="font-size: 5em;">The Kyanet</h1>
-					<span class="dm-foot" style="color: gray; font-weight: 500;">ソノルミネセンス</span>
-				</div>
-				<div class="vstack" style="gap: 5em;">
-					<div class="information" style="text-align: left; background-color: #2b2b2b; padding: 2em; border-radius: 15px;">
-						<p class="dm">I am driven by my thirst for knowledge and strive to learn more about everything</p>
-						<a href="/about" class="dm-foot" style="color: gray;">learn more</a>
-					</div>
-					<div class="information" style="text-align: right; background-color: #2b2b2b; padding: 2em; border-radius: 15px;">
-						<p class="dm">Want to get in contact with me, or check my recent progress?</p>
-						<a href="/card" class="dm-foot" style="color: gray;">check my socials yo</a>
-					</div>
-				</div>
-			</div>
-			<div class="spacer"></div>
-			<span class="dm-foot" style="color: gray;">"And without purpose, we are nothing. If you are nothing, your purpose is to find it."</span>
+<Layout props={props}>
+	<div class="hero jarallax">
+		<Image class="heroimage jarallax-img" src={images[hero]()} alt="A blurred gradient"></Image>
+		<div class="vstack">
+			<Logo fill="#FFFFFF" id="headlogo" />
+			<h1 class="grotesk-head-2">Art Made to Feel</h1>
 		</div>
-		<KFooter page=`${pageTitle}` color="#1b1b1b" />
-	</body>
-</html>
+	</div>
+
+	<div class="marquee">
+		<div class="marquee-carousel">
+			{
+				Object.entries(Object.keys(images)).map((x) => (
+					<a class="marquee-item" href={x[1].replace("/public", "").replace("/thumbnails", "")}><img src={x[1].replace("/public", "")} alt="" /></a>
+				))
+			}
+			{
+				Object.entries(Object.keys(images)).map((x) => (
+					<a class="marquee-item" href={x[1].replace("/public", "").replace("/thumbnails", "")}><img src={x[1].replace("/public", "")} alt="" /></a>
+				))
+			}
+		</div>
+	</div>
+
+	<div class="vstack centerx x-pad read">
+		<h2 class="grotesk-head-2">Soul in every piece</h2>
+		<sub><AVIN message="NOT ALONE"/></sub>
+		<p>
+			Having struggled from a young age to represent my emotions in an understandable medium, I turned to art to explain myself.
+			Each piece has it's own meaning - one that's neither right nor wrong. That's because I feel emotions shouldn't be described by words, but by feeling itself.
+		</p>
+	</div>
+
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+
+	<div class="vstack centerx x-pad read">
+		<h2 class="grotesk-head-2">A place to observe</h2>
+		<sub><AVIN message="CONTACT ME"/></sub>
+		<p>
+			Find me on any of these socials
+		</p>
+	</div>
+
+	<div class="hstack centerx refuge x-pad read">
+		{
+			Object.entries(socials).map((x) => (
+				<a href={x[1]} class="inline-link">{x[0]}</a>
+			))
+		}
+	</div>
+
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+
+	<div class="vstack centerx x-pad read">
+		<h2 class="grotesk-head-2">So you require more</h2>
+		<sub><AVIN message="KNOW ALL"/></sub>
+		<p>
+			I see you're interested in my story. Perhaps you would like to check out <a href="/about" class="inline-link">this page</a> then.
+		</p>
+	</div>
+
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+
+	<script src="./src/pages/scripts/index.js" type="module"/>
+</Layout>

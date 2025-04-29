@@ -6,7 +6,8 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kyanoxia.com',
-  output: "hybrid",
+  siteName: 'The Kyanet',
+  output: "server",
   adapter: vercel(),
   integrations: [sitemap({
     filter: (page) => page !== 'https://kyanoxia.com/template/' &&

@@ -1,0 +1,65 @@
+---
+interface Props {
+    message: string;
+};
+
+const { message } = Astro.props;
+
+const upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const avin = ["_", "/", "Λ", "I", "V", "N"];
+var text = "";
+
+[...message].forEach((i, idx) => {
+    if (i === " ") {
+        text += " ";
+    }
+    else {
+        var str = 0;
+        var c = upperCaseLetters.indexOf(i) + 1;
+
+        var num = ~~(c / 10) * 10;
+        str = ~~(c / 10) * 10;
+
+        if ((c - num) / 5 >= 1) {
+            str = str * 10 + 5;
+            num += 5;
+        }
+
+        if ((c - num) / 4 >= 1) {
+            str = str * 10 + 4;
+            num += 4;
+        }
+
+        if ((c - num) / 3 >= 1) {
+            str = str * 10 + 3;
+            num += 3;
+        }
+
+        if ((c - num) / 2 >= 1) {
+            str = str * 10 + 2;
+            num += 2;
+        }
+
+        if ((c - num) / 1 >= 1) {
+            str = str * 10 + 1;
+            num += 1;
+        }
+
+        text += "｢";
+
+        [...str.toString()].forEach((j) => {
+            var k = parseInt(j);
+
+            text += avin[k];
+        });
+
+        if (idx == message.length - 1) {
+            text += "｣";
+        }
+        else {
+            text += "｣ ";
+        }
+    }
+});
+---
+{text}

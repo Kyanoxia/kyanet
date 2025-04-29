@@ -1,0 +1,70 @@
+---
+// Import Stylesheet and KFooter
+import KFooter from "../components/KFooter.astro";
+import "../styles/main.css";
+
+// To properly fill out meta information, please include ALL of the properties here in your layout tag
+const { props } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, import.meta.env.SITE).href;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href={props.favicon} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<meta property="og:site_name" content={props.siteName} />
+		<meta property="og:title" content={props.title} />
+		<meta property="og:description" content={props.description} />
+		<meta property="og:image" content={props.image} />
+		<meta property="og:url" content={canonicalUrl}>
+
+		<meta property="description" content={props.description} />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content={props.siteName} />
+		<meta name="twitter:title" content={props.title} />
+		<meta name="twitter:description" content={props.description} />
+		<meta name="twitter:url" content={canonicalUrl}>
+		<meta name="twitter:image" content={props.image} />
+
+		<meta itemprop="name" content={props.title} />
+		<meta itemprop="description" content={props.description} />
+		<meta itemprop="image" content={props.image} />
+
+		<meta name="name" content=`${props.title}` />
+		<meta name="description" content=`${props.description}` />
+		<meta name="image" content=`${props.image}` />
+
+		<meta name="theme-color" content={props.color} />
+
+		<title>{props.title}</title>
+
+		<script is:inline src="https://kit.fontawesome.com/6a9ec12e2e.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<slot />
+		<KFooter page={props.title} color="#1b1b1b"></KFooter>
+	</body>
+</html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		height: 100vh;
+		width: 100%;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		min-width: 0;
+	}
+</style>

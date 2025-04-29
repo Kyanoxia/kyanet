@@ -1,9 +1,13 @@
 import { defineMiddleware } from "astro:middleware";
-import ical, { type CalendarComponent } from 'node-ical';
+import dids from "./bsky-did.json";
 
 export const onRequest = defineMiddleware (async (context, next) => {        
     console.log("MIDDLEWARE EXECUTING");
-    console.log(context.request.headers.get("user-agent"))
+    console.log(context.request.headers.get("user-agent"));
+
+    // Get Subdomain
+    const subdomain = context.url.hostname;
+    console.log(subdomain);
 
     if (context.url.pathname === "/join" || context.url.pathname === "/join/") {
         const inv: string = "DVvGFXqpqH";
@@ -23,6 +27,16 @@ export const onRequest = defineMiddleware (async (context, next) => {
         }
 
         return Response.redirect(new URL(`https://discord.com/invite/${inv}`), 302)
+    }
+    else if (context.url.pathname === "/.well-known/atproto-did" || context.url.pathname === "/.well-known/atproto-did/") {
+        //@ts-expect-error
+        return new Response(dids[subdomain], {
+            status: 200,
+            statusText: "ok",
+            headers: {
+                "content-type": "text/plain"
+            }
+        });
     }
     else if (/(?<=\/blog\/)./g.test(context.url.pathname))
     {
