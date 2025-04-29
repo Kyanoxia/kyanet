@@ -1,6 +1,4 @@
 ---
-import { marked } from 'marked';
-
 export const prerender = false;
 
 const pageTitle = "Blog";
@@ -15,13 +13,9 @@ var records = data.records;
 
 records = records.filter((rec: { value: { visibility: string; }; }) => {return rec.value.visibility === "public"});
 
-import { Image } from "astro:assets";
 import KFooter from "../components/KFooter.astro";
 import "../styles/blog.css";
-import { DevToolbarRadioCheckbox } from 'astro/runtime/client/dev-toolbar/ui-library/radio-checkbox.js';
-import type { string, undefined } from 'astro:schema';
-import type { convertTypeAcquisitionFromJson } from 'typescript';
-import type { getDataEntryById } from 'astro:content';
+import type { undefined } from 'astro:schema';
 ---
 <html lang="en">
 	<head>
