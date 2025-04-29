@@ -12,5 +12,6 @@ export default defineConfig({
   integrations: [sitemap({
     filter: (page) => page !== 'https://kyanoxia.com/template/' &&
                       page !== 'https://kyanoxia.com/404/',
-  })]
+  })],
+  base: "./"
 });
