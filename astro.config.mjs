@@ -10,6 +10,14 @@ export default defineConfig({
   output: "server",
   adapter: vercel({
     edgeMiddleware: true,
+    isr: {
+      // A secret random string that you create.
+      bypassToken: "005556d774a8",
+      // Paths that will always be served fresh.
+      exclude: [
+        '/.well-known/atproto-did',
+      ]
+  }
   }),
   integrations: [sitemap({
     filter: (page) => page !== 'https://kyanoxia.com/template/' &&
