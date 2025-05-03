@@ -12,7 +12,7 @@ export default defineConfig({
     edgeMiddleware: true,
     isr: {
       // A secret random string that you create.
-      bypassToken: "005556d774a8",
+      bypassToken: "005556d774a8GVEGLKJAEB315017U13TLKSAFDJSHBGLSK",
       // Paths that will always be served fresh.
       exclude: [
         '/.well-known/atproto-did',
