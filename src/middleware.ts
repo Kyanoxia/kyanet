@@ -30,9 +30,8 @@ export const onRequest = defineMiddleware (async (context, next) => {
     }
     else if (context.url.pathname === "/.well-known/atproto-did" || context.url.pathname === "/.well-known/atproto-did/") {
         //@ts-expect-error
-        return new Response(dids[subdomain], {
+        return new Response(dids[subdomain] + "\n", {
             status: 200,
-            statusText: "ok",
             headers: {
                 "content-type": "text/plain"
             }
